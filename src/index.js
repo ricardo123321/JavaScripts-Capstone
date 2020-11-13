@@ -2,11 +2,22 @@ import 'phaser';
 
 import { SceneMain } from './scenes/SceneMain';
 
-const gameConfig = {
-  type: Phaser.AUTO,
-  width: 680,
-  height: 400,
-  scene: SceneMain
+var config = {
+  type: Phaser.WEBGL,
+  width: 480,
+  height: 640,
+  backgroundColor: "black",
+  physics: {
+    default: "arcade",
+    arcade: {
+      gravity: { x: 0, y: 0 }
+    }
+  },
+  scene: [
+    SceneMain,
+  ],
+  pixelArt: true,
+  roundPixels: true
 };
 
-new Phaser.Game(gameConfig);
+var game = new Phaser.Game(config);
