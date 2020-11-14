@@ -1,4 +1,7 @@
 import { Player } from './Entities';
+import { ChaserShip } from './Entities';
+import { GunShip } from './Entities';
+import { CarrierShip } from './Entities';
 export class SceneMain extends Phaser.Scene {
   constructor() {
     super({ key: "SceneMain" });
@@ -34,14 +37,7 @@ export class SceneMain extends Phaser.Scene {
       frameRate: 20,
       repeat: -1
     });
-
-    this.anims.create({
-      key: "ufodark",
-      frames: this.anims.generateFrameNumbers("ufodark"),
-      frameRate: 20,
-      repeat: -1
-    });
-
+    
     this.anims.create({
       key: "exp2_0",
       frames: this.anims.generateFrameNumbers("exp2_0"),
@@ -74,6 +70,22 @@ export class SceneMain extends Phaser.Scene {
   this.keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
   this.keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
   this.keySpace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+  this.enemies = this.add.group();
+this.enemyLasers = this.add.group();
+this.playerLasers = this.add.group();
+this.time.addEvent({
+  delay: 1000,
+  callback: function() {
+    var enemy = new GunShip(
+      this,
+      Phaser.Math.Between(0, this.game.config.width),
+      0
+    );
+    this.enemies.add(enemy);
+  },
+  callbackScope: this,
+  loop: true
+});
   }
   update(){
     this.player.update();
