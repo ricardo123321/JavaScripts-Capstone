@@ -47,10 +47,7 @@ export class SceneMain extends Phaser.Scene {
 
     this.sfx = {
       explosions: this.sound.add("explosion_somewhere_far"),
-      laser: [
-        this.sound.add("rlaunch"),
-        this.sound.add("flaunch")
-      ]
+      laser:  this.sound.add("rlaunch")
     };
     this.player = new Player(
       this,
@@ -131,6 +128,15 @@ this.time.addEvent({
     else if (this.keyD.isDown) {
       this.player.moveRight();
     }
+
+    if (this.keySpace.isDown) {
+      this.player.setData("isShooting", true);
+    }
+    else {
+      this.player.setData("timerShootTick", this.player.getData("timerShootDelay") - 1);
+      this.player.setData("isShooting", false);
+    }
+
     for (var i = 0; i < this.enemies.getChildren().length; i++) {
       var enemy = this.enemies.getChildren()[i];
 
