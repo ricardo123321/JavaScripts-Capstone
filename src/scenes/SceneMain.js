@@ -11,7 +11,7 @@ export class SceneMain extends Phaser.Scene {
     this.load.image('bg_1_1', 'assets/bg_1_1.png');
     this.load.image('flag', 'assets/flag.svg');
     this.load.image('projectile1', 'assets/projectile1.svg');
-    this.load.image('starship', 'assets/starship.svg');
+    this.load.image('starship', 'assets/starship.svg', );
     this.load.image('starshipdark', 'assets/starshipdark.svg');
     this.load.image('projectile2', 'assets/projectile2.svg');
     this.load.image('ufo', 'assets/ufo.svg');
@@ -32,7 +32,7 @@ export class SceneMain extends Phaser.Scene {
   create() {
     this.add.image(380, 300, 'bg_1_1');
     this.anims.create({
-      key: "ufo",
+      key: "bg_1_1",
       frames: this.anims.generateFrameNumbers("ufo"),
       frameRate: 20,
       repeat: -1
@@ -43,13 +43,6 @@ export class SceneMain extends Phaser.Scene {
       frames: this.anims.generateFrameNumbers("exp2_0"),
       frameRate: 20,
       repeat: 0
-    });
-
-    this.anims.create({
-      key: "starship",
-      frames: this.anims.generateFrameNumbers("starship"),
-      frameRate: 20,
-      repeat: -1
     });
 
     this.sfx = {
@@ -89,7 +82,7 @@ this.time.addEvent({
       if (this.getEnemiesByType("ChaserShip").length < 5) {
 
         enemy = new ChaserShip(
-          this,
+          this,   
           Phaser.Math.Between(0, this.game.config.width),
           0
         );
@@ -137,6 +130,11 @@ this.time.addEvent({
     }
     else if (this.keyD.isDown) {
       this.player.moveRight();
+    }
+    for (var i = 0; i < this.enemies.getChildren().length; i++) {
+      var enemy = this.enemies.getChildren()[i];
+
+      enemy.update();
     }
   }
 }
