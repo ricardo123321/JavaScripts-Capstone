@@ -17,7 +17,10 @@ var config = {
     SceneMain,
   ],
   pixelArt: true,
-  roundPixels: true
+  roundPixels: true,
+  autoCenter: Phaser.Scale.CENTER_BOTH
 };
 
-var game = new Phaser.Game(config);
+game = new Phaser.Game(config);
+game.scale.pageAlignHorizontally = true;
+game.scale.pageAlignVertically = true;
