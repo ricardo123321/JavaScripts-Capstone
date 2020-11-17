@@ -20,7 +20,7 @@ The design of the game was mainly decided with the phaser3 space shooter tutoria
 
 * add more enemies
 * save the score online
-* add more difficult as the game progresses
+* make the game more difficult as the game progresses
 
 ### Live Demo
 
