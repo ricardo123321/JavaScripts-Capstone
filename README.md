@@ -1,27 +1,67 @@
-# Development set up for Phaser 3, Webpack, and ES6.
+# Space Shooter
 
-This is the final version of the project we create in https://snowbillr.github.io/blog/2018-04-09-a-modern-web-development-setup-for-phaser-3/.
+![screenshot](./screenshot.png)
 
-For a guide on the concepts included in this project and how to build it from scratch, take a look at [the blog post](https://snowbillr.github.io/blog/2018-04-09-a-modern-web-development-setup-for-phaser-3/).
+### Built With
+This project was built using these technologies.
 
-## Using This Project
+* Javascript
+* Webpack
+* VSCode
+* ESLint
+* Phaser3
+* HTML5
 
-1. Make a directory somewhere in your file system where you want to keep your project.
-1. `cd` into that directory from the command line.
-1. Clone this project with `git clone https://github.com/snowbillr/phaser3-webpack-es6-dev-starter.git`.
+### About the game
 
-## Installing Dependencies
+The design of the game was mainly decided with the phaser3 space shooter tutorial. The design was expanded to have more than one live and save the score of game 
 
-1. Follow the blog post for instructions on how to install [Yarn](https://yarnpkg.com/en/) if you don't already have it installed.
-1. From the cloned project's directory, run `yarn install`.
+### Future Features
 
-## Running The Project
+* add more enemies
+* save the score online
+* add more difficult as the game progresses
 
-Once you've installed the project's dependencies, you can run the project using [Webpack Dev Server](https://github.com/webpack/webpack-dev-server).
+### Live Demo
 
-1. From your project's directory, run `yarn webpack-dev-server`.
-1. Open up your browser to `http://localhost:8080`.
-1. You should see a web page with a black box that says "Hello Phaser!" in green text. That's our game!
-1. :tada:
+[Live Demo Link]()
 
-Because you are running the project through Webpack Dev Server, any time you make a change to your source code, the browser will automatically refresh with your updated code.
+### Running Locally
+
+Clone the repo:
+```
+git clone https://github.com/ricardo123321
+```
+Inside the root folder of the project, install the node packages:
+```
+npm install
+```
+Go to the root folder and run the npm build script:
+```
+yarn webpack-dev-server
+```
+## Author
+
+👤 Ricardo
+
+- Github: [@ricardo123321](https://github.com/ricardo123321)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Thanks to Microverse and the wonderful reviewers who have guided us to the completion of this project
+
+
+## 📝 License
+
+This project is [MIT](lic.url) licensed.
+ 
