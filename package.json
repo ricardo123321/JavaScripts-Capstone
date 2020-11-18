@@ -11,6 +11,7 @@
     "watch": "webpack --watch",
     "npx-fix": "npx eslint src/  --fix",
     "start": "webpack-dev-server",
+    "heroku-prebuild": "npm install --dev",
     "heroku-postbuild": "webpack -p"
   },
   "repository": "https://www.github.com/snowbillr/phaser3-webpack-es6-dev-starter",
