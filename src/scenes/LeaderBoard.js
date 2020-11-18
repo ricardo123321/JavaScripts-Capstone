@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import {ScrollingBackground} from './scrollingBackground';
+import { ScrollingBackground } from './scrollingBackground';
 import { getScoreBoard } from '../ScoreBoard';
 
 export class LeaderBoard extends Phaser.Scene {
@@ -13,13 +13,12 @@ export class LeaderBoard extends Phaser.Scene {
       url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js',
       sceneKey: 'rexUI',
     });
-    this.load.image("sprBtnRestart", "assets/sprBtnRestart.png");
-    this.load.image("sprBtnRestartHover", "assets/sprBtnRestartHover.png");
-    this.load.image("sprBtnRestartDown", "assets/sprBtnRestartDown.png");
+    this.load.image('sprBtnRestart', 'assets/sprBtnRestart.png');
+    this.load.image('sprBtnRestartHover', 'assets/sprBtnRestartHover.png');
+    this.load.image('sprBtnRestartDown', 'assets/sprBtnRestartDown.png');
   }
 
   create() {
-
     this.sfx = {
       btnOver: this.sound.add('sndBtnOver', { volume: 0.1 }),
       btnDown: this.sound.add('sndBtnDown', { volume: 0.1 }),
@@ -28,28 +27,28 @@ export class LeaderBoard extends Phaser.Scene {
     this.btnRestart = this.add.sprite(
       this.game.config.width * 0.3,
       this.game.config.height * 0.9,
-      "sprBtnRestart"
+      'sprBtnRestart',
     );
 
     this.btnRestart.setInteractive();
 
-    this.btnRestart.on("pointerover", function() {
-      this.btnRestart.setTexture("sprBtnRestartHover");
+    this.btnRestart.on('pointerover', function () {
+      this.btnRestart.setTexture('sprBtnRestartHover');
       this.sfx.btnOver.play();
     }, this);
 
-    this.btnRestart.on("pointerout", function() {
-      this.setTexture("sprBtnRestart");
+    this.btnRestart.on('pointerout', function () {
+      this.setTexture('sprBtnRestart');
     });
 
-    this.btnRestart.on("pointerdown", function() {
-      this.btnRestart.setTexture("sprBtnRestartDown");
+    this.btnRestart.on('pointerdown', function () {
+      this.btnRestart.setTexture('sprBtnRestartDown');
       this.sfx.btnDown.play();
     }, this);
 
-    this.btnRestart.on("pointerup", function() {
-      this.btnRestart.setTexture("sprBtnRestart");
-      this.scene.start("SceneMain");
+    this.btnRestart.on('pointerup', function () {
+      this.btnRestart.setTexture('sprBtnRestart');
+      this.scene.start('SceneMain');
     }, this);
 
 

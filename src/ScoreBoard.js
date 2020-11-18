@@ -1,5 +1,6 @@
-import "@babel/polyfill";
-const createGame = async function(){
+import '@babel/polyfill';
+
+const createGame = async function () {
   const game = {
     name: '1st Space Shooter',
   };
@@ -17,7 +18,7 @@ const createGame = async function(){
   const answer = await response.json();
 
   return answer;
-}
+};
 
 async function submitHighScore(userName, scoreValue) {
   const submit = {

@@ -4,31 +4,30 @@ import { SceneMainMenu } from './scenes/SceneMainMenu';
 import { SceneGameOver } from './scenes/SceneGameOver';
 import { LeaderBoard } from './scenes/LeaderBoard';
 
-let game
-let config = {
+const config = {
   type: Phaser.WEBGL,
   parent: 'divld',
   dom: {
-    createContainer: true
-},
+    createContainer: true,
+  },
   width: 450,
   height: 640,
-  backgroundColor: "black",
+  backgroundColor: 'black',
   physics: {
-    default: "arcade",
+    default: 'arcade',
     arcade: {
-     gravity: { x: 0, y: 0 }
-    }
+      gravity: { x: 0, y: 0 },
+    },
   },
   scene: [
     SceneMainMenu,
     SceneMain,
     SceneGameOver,
-    LeaderBoard
+    LeaderBoard,
   ],
   pixelArt: true,
   roundPixels: true,
-  autoCenter: Phaser.Scale.CENTER_BOTH
+  autoCenter: Phaser.Scale.CENTER_BOTH,
 };
 
-game = new Phaser.Game(config);
+const game = new Phaser.Game(config);
