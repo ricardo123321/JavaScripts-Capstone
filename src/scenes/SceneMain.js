@@ -1,31 +1,30 @@
-import { Player } from './Entities';
-import { ChaserShip } from './Entities';
-import { GunShip } from './Entities';
-import { CarrierShip } from './Entities';
-import {ScrollingBackground} from './scrollingBackground'
+import { Player } from '../entities/Player';
+import { ChaserShip } from '../entities/ChaserShip';
+import { GunShip } from '../entities/GunShip';
+import { CarrierShip } from '../entities/CarrierShip';
 export class SceneMain extends Phaser.Scene {
   constructor() {
     super({ key: "SceneMain" });
   }
 
   preload() {
-    this.load.image('bg_1_1', 'assets/bg_1_1.png');
-    this.load.image('flag', 'assets/flag.svg');
-    this.load.image('projectile1', 'assets/projectile1.svg');
-    this.load.image('starship', 'assets/starship.svg', );
-    this.load.image('starshipdark', 'assets/starshipdark.svg');
-    this.load.image('projectile2', 'assets/projectile2.svg');
-    this.load.image('ufo', 'assets/ufo.svg');
-    this.load.image('ufodark', 'assets/ufodark.svg');
-    this.load.image('torpedo', 'assets/torpedo.svg');
-    this.load.image('torpedodark', 'assets/torpedodark.svg');
-    this.load.spritesheet("exp2_0", "assets/exp2_0.png", {
+    this.load.image('bg_1_1', '../assets/bg_1_1.png');
+    this.load.image('flag', '../assets/flag.svg');
+    this.load.image('projectile1', '../assets/projectile1.svg');
+    this.load.image('starship', '../assets/starship.svg', );
+    this.load.image('starshipdark', '../assets/starshipdark.svg');
+    this.load.image('projectile2', '../assets/projectile2.svg');
+    this.load.image('ufo', '../assets/ufo.svg');
+    this.load.image('ufodark', '../assets/ufodark.svg');
+    this.load.image('torpedo', '../assets/torpedo.svg');
+    this.load.image('torpedodark', '../assets/torpedodark.svg');
+    this.load.spritesheet("exp2_0", "../assets/exp2_0.png", {
       frameWidth: 64,
       frameHeight: 64
     });
-    this.load.audio("xeon6", "assets/xeon6.ogg");
-    this.load.audio("rlaunch", "assets/rlaunch.wav");
-    this.load.audio("flaunch", "assets/flaunch.wav");
+    this.load.audio("xeon6", "../assets/xeon6.ogg");
+    this.load.audio("rlaunch", "../assets/rlaunch.wav");
+    this.load.audio("flaunch", "../assets/flaunch.wav");
   }
 
   create() {
