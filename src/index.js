@@ -1,10 +1,12 @@
 import 'phaser';
-
 import { SceneMain } from './scenes/SceneMain';
+import { SceneMainMenu } from './scenes/SceneMainMenu';
+import { SceneGameOver } from './scenes/SceneGameOver';
 
-var config = {
+let game
+let config = {
   type: Phaser.WEBGL,
-  width: 680,
+  width: 450,
   height: 640,
   backgroundColor: "black",
   physics: {
@@ -14,7 +16,9 @@ var config = {
     }
   },
   scene: [
+    SceneMainMenu,
     SceneMain,
+    SceneGameOver
   ],
   pixelArt: true,
   roundPixels: true,
@@ -22,5 +26,3 @@ var config = {
 };
 
 game = new Phaser.Game(config);
-game.scale.pageAlignHorizontally = true;
-game.scale.pageAlignVertically = true;

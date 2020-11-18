@@ -2,6 +2,7 @@ import { Player } from './Entities';
 import { ChaserShip } from './Entities';
 import { GunShip } from './Entities';
 import { CarrierShip } from './Entities';
+import {ScrollingBackground} from './scrollingBackground'
 export class SceneMain extends Phaser.Scene {
   constructor() {
     super({ key: "SceneMain" });
@@ -28,7 +29,7 @@ export class SceneMain extends Phaser.Scene {
   }
 
   create() {
-    this.add.image(380, 300, 'bg_1_1');
+    this.add.image(300, 320, 'bg_1_1');
     this.anims.create({
       key: "bg_1_1",
       frames: this.anims.generateFrameNumbers("ufo"),
@@ -112,6 +113,7 @@ this.physics.add.overlap(this.player, this.enemies, function(player, enemy) {
   if (!player.getData("isDead") &&
       !enemy.getData("isDead")) {
     player.explode(false);
+    player.onDestroy()
     enemy.explode(true);
   }
 });
@@ -119,6 +121,7 @@ this.physics.add.overlap(this.player, this.enemyLasers, function(player, laser) 
   if (!player.getData("isDead") &&
       !laser.getData("isDead")) {
     player.explode(false);
+    player.onDestroy()
     laser.destroy();
   }
 });
