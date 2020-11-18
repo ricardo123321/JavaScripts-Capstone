@@ -21,6 +21,7 @@ The design of the game was mainly decided with the phaser3 space shooter tutoria
 * add more enemies
 * save the score online
 * make the game more difficult as the game progresses
+* separate ES6 modules
 
 ### Live Demo
 
