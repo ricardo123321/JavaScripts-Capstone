@@ -55,9 +55,16 @@ export class SceneMain extends Phaser.Scene {
     );
 
 
-    this.hpBar = [
-      'hp0Of5', 'hp1Of5', 'hp2Of5', 'hp3Of5', 'hp4Of5', 'hp5Of5',
-    ];
+    this.hpBar = this.add.text(
+      this.game.config.width * 0.2,
+      this.game.config.height * 0.05,
+      `Lives: ${this.player.getData('health')}`, {
+        color: '#d0c600',
+        fontFamily: 'sans-serif',
+        fontSize: '3vw',
+        lineHeight: 1.3,
+      },
+    );
 
     this.sceneScore = this.add.text(
       this.game.config.width * 0.025,
@@ -69,8 +76,6 @@ export class SceneMain extends Phaser.Scene {
         lineHeight: 1.3,
       },
     );
-
-    this.updateHPBar(this.player);
 
     this.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
   this.keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
@@ -134,7 +139,6 @@ this.physics.add.collider(this.player, this.enemyLasers, (player, laser) => {
       player.onDestroy();
     } else {
       laser.destroy();
-      this.updateHPBar(this.player);
     }
   }
 });
@@ -158,7 +162,6 @@ this.physics.add.collider(this.player, this.enemies, (player, enemy) => {
         enemy.onDestroy();
       }
       enemy.destroy();
-      this.updateHPBar(this.player);
     }
   }
 });
@@ -177,8 +180,9 @@ this.physics.add.collider(this.player, this.enemies, (player, enemy) => {
   update(){
     this.player.update();
     this.sceneScore.text = `Score: ${this.player.getData('score')}`;
+    this.hpBar.text = `Extra Lives: ${this.player.getData('health')}`
 
-    if (!this.player.getData("isDead")) {
+   if (!this.player.getData("isDead")) {
       this.player.update();
       if (this.keyW.isDown) {
         this.player.moveUp();
@@ -247,12 +251,5 @@ this.physics.add.collider(this.player, this.enemies, (player, enemy) => {
         }
       }
     }
-  }
-  updateHPBar(player) {
-    this.sceneHPBar = this.add.image(
-      this.game.config.width * 0.3,
-      this.game.config.height * 0.05,
-      this.hpBar[player.getData('health')],
-    );
   }
 }

@@ -85,7 +85,7 @@ export class SceneGameOver extends Phaser.Scene {
       <input type="button" name="submitButton" value="Submit Score" style="font-size: 1.5rem">
     `;
 
-    const element = this.add.dom(280, 480, div);
+    const element = this.add.dom(130, 480, div);
     element.addListener('click');
 
     element.on('click', (event) => {
