@@ -1,4 +1,6 @@
 import {ScrollingBackground} from './scrollingBackground'
+import { getLocalScores } from '../LocalStr';
+import { submitHighScore } from '../ScoreBoard';
 
 export class SceneGameOver extends Phaser.Scene {
   constructor() {
@@ -61,6 +63,45 @@ export class SceneGameOver extends Phaser.Scene {
       var bg = new ScrollingBackground(this, key, i * 10);
       this.backgrounds.push(bg);
     }
+
+    this.scores = getLocalScores();
+    this.gameOverSceneScore = this.add.text(
+      this.game.config.width * 0.6,
+      this.game.config.height * 0.72,
+      `Score: ${this.scores[0]}`, {
+        color: '#d0c600',
+        fontFamily: 'sans-serif',
+        fontSize: '30px',
+        lineHeight: 1.3,
+        align: 'center',
+      },
+    );
+
+    this.userName = '';
+
+    const div = document.createElement('div');
+    div.innerHTML = `
+      <input type="text" id="nameField" placeholder="Enter your name" style="font-size: 1.5rem width: ${this.game.config.width * 0.25}"><br>
+      <input type="button" name="submitButton" value="Submit Score" style="font-size: 1.5rem">
+    `;
+
+    const element = this.add.dom(280, 480, div);
+    element.addListener('click');
+
+    element.on('click', (event) => {
+      if (event.target.name === 'submitButton') {
+        const inputText = document.getElementById('nameField');
+        if (inputText.value !== '') {
+          element.removeListener('click');
+          element.setVisible(false);
+          this.userName = inputText.value;
+          this.submit = submitHighScore(this.userName, this.scores[0]);
+          this.submit.then(() => {
+            this.scene.start('LeaderBoard');
+          });
+        }
+      }
+    });
   }
 
   update() {

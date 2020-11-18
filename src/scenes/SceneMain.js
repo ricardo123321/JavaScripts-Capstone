@@ -1,8 +1,7 @@
-import { Player } from './Entities';
-import { ChaserShip } from './Entities';
-import { GunShip } from './Entities';
-import { CarrierShip } from './Entities';
-import {ScrollingBackground} from './scrollingBackground'
+import { Player } from './Entities/Player';
+import { ChaserShip } from './Entities/ChaserShip';
+import { GunShip } from './Entities/GunShip';
+import { CarrierShip } from './Entities/CarrierShip';
 export class SceneMain extends Phaser.Scene {
   constructor() {
     super({ key: "SceneMain" });
@@ -54,6 +53,25 @@ export class SceneMain extends Phaser.Scene {
       this.game.config.height * 0.5,
       "starship"
     );
+
+
+    this.hpBar = [
+      'hp0Of5', 'hp1Of5', 'hp2Of5', 'hp3Of5', 'hp4Of5', 'hp5Of5',
+    ];
+
+    this.sceneScore = this.add.text(
+      this.game.config.width * 0.025,
+      this.game.config.height * 0.925,
+      `Score: ${this.player.getData('score')}`, {
+        color: '#d0c600',
+        fontFamily: 'sans-serif',
+        fontSize: '3vw',
+        lineHeight: 1.3,
+      },
+    );
+
+    this.updateHPBar(this.player);
+
     this.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
   this.keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
   this.keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
@@ -100,31 +118,51 @@ this.time.addEvent({
   callbackScope: this,
   loop: true
 });
-this.physics.add.collider(this.playerLasers, this.enemies, function(playerLaser, enemy) {
-  if (enemy) {
-    if (enemy.onDestroy !== undefined) {
-      enemy.onDestroy();
-    }
-    enemy.explode(true);
+this.physics.add.collider(this.playerLasers, this.enemies, (playerLaser, enemy) => {
+  if (enemy && !this.player.getData('isDead')) {
+      this.player.setScore(enemy.getData('score'));
+      enemy.explode(true);
     playerLaser.destroy();
   }
 });
-this.physics.add.overlap(this.player, this.enemies, function(player, enemy) {
-  if (!player.getData("isDead") &&
-      !enemy.getData("isDead")) {
-    player.explode(false);
-    player.onDestroy()
-    enemy.explode(true);
+this.physics.add.collider(this.player, this.enemyLasers, (player, laser) => {
+  if (!player.getData('isDead')
+      && !laser.getData('isDead')) {
+    if (player.updateHealth()) {
+      player.explode(false);
+      laser.destroy();
+      player.onDestroy();
+    } else {
+      laser.destroy();
+      this.updateHPBar(this.player);
+    }
   }
 });
-this.physics.add.overlap(this.player, this.enemyLasers, function(player, laser) {
-  if (!player.getData("isDead") &&
-      !laser.getData("isDead")) {
-    player.explode(false);
-    player.onDestroy()
-    laser.destroy();
+
+this.physics.add.collider(this.player, this.enemies, (player, enemy) => {
+  if (!player.getData('isDead')
+      && !enemy.getData('isDead')) {
+    if (player.updateHealth()) {
+      player.explode(false);
+
+      if (enemy.onDestroy !== undefined) {
+        enemy.onDestroy();
+      }
+      player.setScore(enemy.getData('score'));
+      enemy.destroy();
+
+      player.onDestroy();
+    } else {
+      if (enemy.onDestroy !== undefined) {
+        player.setScore(enemy.getData('score'));
+        enemy.onDestroy();
+      }
+      enemy.destroy();
+      this.updateHPBar(this.player);
+    }
   }
 });
+
   }
   getEnemiesByType(type) {
     var arr = [];
@@ -137,6 +175,9 @@ this.physics.add.overlap(this.player, this.enemyLasers, function(player, laser) 
     return arr;
   }
   update(){
+    this.player.update();
+    this.sceneScore.text = `Score: ${this.player.getData('score')}`;
+
     if (!this.player.getData("isDead")) {
       this.player.update();
       if (this.keyW.isDown) {
@@ -206,5 +247,12 @@ this.physics.add.overlap(this.player, this.enemyLasers, function(player, laser) 
         }
       }
     }
+  }
+  updateHPBar(player) {
+    this.sceneHPBar = this.add.image(
+      this.game.config.width * 0.3,
+      this.game.config.height * 0.05,
+      this.hpBar[player.getData('health')],
+    );
   }
 }
