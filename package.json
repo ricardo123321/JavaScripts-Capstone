@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A project starter for developing Phaser 3 games using Webpack and ES6.",
   "scripts": {
+    "heroku-prebuild": "npm install --dev",
     "test": "jest",
     "jest-watch": "jest --watch",
     "jest-init": "jest --init",
@@ -11,7 +12,6 @@
     "watch": "webpack --watch",
     "npx-fix": "npx eslint src/  --fix",
     "start": "webpack-dev-server",
-    "heroku-prebuild": "npm install --dev",
     "heroku-postbuild": "webpack -p"
   },
   "repository": "https://www.github.com/snowbillr/phaser3-webpack-es6-dev-starter",
