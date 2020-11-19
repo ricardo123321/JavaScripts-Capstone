@@ -6,6 +6,7 @@ describe('Test to add a game, add a score to it and request it back', () => {
     const result1 = createGame();
     result1.then(answer1 => {
       expect(answer1).toMatch(/(Game with ID).*(added)/);
+      // eslint-disable-next-line prefer-destructuring
       id = answer1.split(' ')[3];
 
       test('Add a record for the previous id', () => {

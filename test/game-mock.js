@@ -1,8 +1,8 @@
 import Phaser from 'phaser';
-import {SceneMainMenu} from '../src/scenes/SceneMainMenu';
-import {SceneMain} from '../src/scenes/SceneMain';
-import {SceneGameOver} from '../src/scenes/SceneGameOver';
-import {LeaderBoard} from '../src/scenes/LeaderBoard';
+import { SceneMainMenu } from '../src/scenes/SceneMainMenu';
+import { SceneMain } from '../src/scenes/SceneMain';
+import { SceneGameOver } from '../src/scenes/SceneGameOver';
+import { LeaderBoard } from '../src/scenes/LeaderBoard';
 
 export function gameRun() {
   const config = {
@@ -24,7 +24,7 @@ export function gameRun() {
       SceneMainMenu,
       SceneMain,
       SceneGameOver,
-      LeaderBoard
+      LeaderBoard,
     ],
     pixelArt: true,
     roundPixels: true,

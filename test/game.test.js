@@ -1,5 +1,6 @@
+import { gameRun } from './game-mock';
+
 require('jest-canvas-mock');
-import {gameRun} from './game-mock';
 
 describe('Tests on a Mocked game', () => {
   const game = gameRun();
