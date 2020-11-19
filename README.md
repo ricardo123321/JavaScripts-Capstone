@@ -65,6 +65,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Thanks to Microverse and the wonderful reviewers who have guided us to the completion of this project
+- CruzR: The creator of the assets used
 
 
 ## 📝 License
