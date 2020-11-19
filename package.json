@@ -5,9 +5,6 @@
   "scripts": {
     "heroku-prebuild": "npm install --dev",
     "test": "jest",
-    "jest-watch": "jest --watch",
-    "jest-init": "jest --init",
-    "install-web": "npm install --save-dev webpack",
     "build": "webpack",
     "watch": "webpack --watch",
     "npx-fix": "npx eslint src/  --fix",
