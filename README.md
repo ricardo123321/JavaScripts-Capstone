@@ -15,13 +15,19 @@ This project was built using these technologies.
 
 ### About the game
 
-The design of the game was mainly decided with the phaser3 space shooter tutorial. The design was expanded to have more than one live and save the score of game 
+The design of the game was mainly decided with the phaser3 space shooter tutorial. The design was expanded to have more than one live and save the score of game.
 
 ### Design
 
-this is a simple pixel game made using low-quality version ships and assets from the ![OpenGameArt](https://opengameart.org/) page
+this is a simple pixel game made using low-quality version ships and assets from the![OpenGameArt](https://opengameart.org/) page.
 
-our player is a starship ![starship](./assets/starship.svg) that most defeat enemies by shooting them lasers ![torpedo](./assets/torpedo.svg)
+our player is a starship ![starship](./assets/starship.svg) that most defeat enemies by shooting them lasers ![torpedo](./assets/torpedo.svg).
+
+in this game we have to face 3 kinds of enemies which are the following:
+
+* A chaser ship that follows the player when it gets to close ![ufo](./assets/ufo.svg).
+* An evil dark ufo, who will constantly shoot at you ![ufodark](./assets/ufodark.svg). Be careful of their lasers ![laser](./assets/projectile1.svg)
+* An enemy starship that does not shoot but will hurt the player if you crash with it![darkstarship](./assets/starshipdark.svg)
 
 ### Future Features
 
