@@ -21,7 +21,7 @@ The design of the game was mainly decided with the phaser3 space shooter tutoria
 
 this is a simple pixel game made using low-quality version ships and assets from the ![OpenGameArt](https://opengameart.org/) page
 
-our player is a starship ![starship](./assets/starship.svg)
+our player is a starship ![starship](./assets/starship.svg) that most defeat enemies by shooting them lasers ![torpedo](./assets/torpedo.svg)
 
 ### Future Features
 
