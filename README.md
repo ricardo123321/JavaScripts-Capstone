@@ -21,6 +21,8 @@ The design of the game was mainly decided with the phaser3 space shooter tutoria
 
 this is a simple pixel game made using low-quality version ships and assets from the ![OpenGameArt](https://opengameart.org/) page
 
+our player is a starship ![starship](./assets/starship.svg)
+
 ### Future Features
 
 * add more enemies
@@ -46,6 +48,11 @@ Go to the root folder and run the npm build script:
 ```
 npm run start
 ```
+### How to play
+In this game you have to shoot the enemy ships to earn points while avoiding them and their lasers, the objective of this game is to accumulate the biggest quantity of points before being destroyed.
+
+to controls are: W(move up), S(move down), D(move rigth), A(move left), Space(shoot)
+
 ## Author
 
 👤 Ricardo
