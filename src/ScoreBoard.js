@@ -40,13 +40,13 @@ async function submitHighScore(userName, scoreValue) {
   return answer;
 }
 
-const sorting = (obj)  => {
+const sorting = (obj) => {
   const array = [];
   for (let i = 0; i < obj.length; i += 1) {
     array.push([obj[i].score, obj[i].user]);
   }
   return Array.from(array).sort((a, b) => b[0] - a[0]);
-}
+};
 
 async function getScoreBoard() {
   const address = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/N9E2SATejbOkDiI58nb6Vu/scores/';

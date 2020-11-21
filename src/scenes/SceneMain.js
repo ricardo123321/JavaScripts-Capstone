@@ -1,3 +1,4 @@
+import Phaser from 'phaser';
 import { Player } from './Entities/Player';
 import { ChaserShip } from './Entities/ChaserShip';
 import { GunShip } from './Entities/GunShip';

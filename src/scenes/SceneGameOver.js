@@ -1,3 +1,4 @@
+import Phaser from 'phaser';
 import { ScrollingBackground } from './scrollingBackground';
 import { getLocalScores } from '../LocalStr';
 import { submitHighScore } from '../ScoreBoard';

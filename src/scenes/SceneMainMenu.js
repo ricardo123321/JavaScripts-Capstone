@@ -1,3 +1,4 @@
+import Phaser from 'phaser';
 import { ScrollingBackground } from './scrollingBackground';
 
 export class SceneMainMenu extends Phaser.Scene {

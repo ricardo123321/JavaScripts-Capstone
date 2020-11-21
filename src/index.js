@@ -1,4 +1,4 @@
-import 'phaser';
+import Phaser from 'phaser';
 import { SceneMain } from './scenes/SceneMain';
 import { SceneMainMenu } from './scenes/SceneMainMenu';
 import { SceneGameOver } from './scenes/SceneGameOver';
@@ -29,5 +29,5 @@ const config = {
   roundPixels: true,
   autoCenter: Phaser.Scale.CENTER_BOTH,
 };
-
+// eslint-disable-next-line no-unused-vars
 const game = new Phaser.Game(config);

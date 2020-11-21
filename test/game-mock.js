@@ -33,4 +33,4 @@ export const gameRun = () => {
   const game = new Phaser.Game(config);
 
   return game;
-}
+};

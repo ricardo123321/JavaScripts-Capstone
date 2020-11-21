@@ -44,7 +44,7 @@ const sorting = (obj) => {
     array.push([obj[i].score, obj[i].user]);
   }
   return Array.from(array).sort((a, b) => b[0] - a[0]);
-}
+};
 
 async function getScoreBoard(id) {
   const address = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores/`;
