@@ -38,7 +38,7 @@ async function submitHighScore(userName, scoreValue, id) {
   return answer;
 }
 
-function sorting(obj) {
+const sorting = (obj) => {
   const array = [];
   for (let i = 0; i < obj.length; i += 1) {
     array.push([obj[i].score, obj[i].user]);

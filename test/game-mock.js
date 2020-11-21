@@ -4,7 +4,7 @@ import { SceneMain } from '../src/scenes/SceneMain';
 import { SceneGameOver } from '../src/scenes/SceneGameOver';
 import { LeaderBoard } from '../src/scenes/LeaderBoard';
 
-export function gameRun() {
+export const gameRun = () => {
   const config = {
     type: Phaser.WEBGL,
     parent: 'divld',
