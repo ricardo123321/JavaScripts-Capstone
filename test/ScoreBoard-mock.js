@@ -18,7 +18,7 @@ async function createGame() {
   return answer;
 }
 
-async function submitHighScore(userName, scoreValue, id) {
+const submitHighScore = async function (userName, scoreValue, id) {
   const submit = {
     user: userName,
     score: scoreValue,
@@ -46,7 +46,7 @@ const sorting = (obj) => {
   return Array.from(array).sort((a, b) => b[0] - a[0]);
 };
 
-async function getScoreBoard(id) {
+const getScoreBoard = async function(id) {
   const address = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores/`;
   const settings = {
     method: 'GET',

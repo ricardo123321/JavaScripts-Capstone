@@ -20,8 +20,7 @@ describe('Test to add a game, add a score to it and request it back', () => {
         test('Get the record added previously', () => {
           const result3 = getScoreBoard(id);
           result3.then(answer3 => {
-            expect(answer3.user).toBe('UserName');
-            expect(answer3.score).toBe(5000);
+            expect(answer3.user).toBe('UserName') && (answer3.score).toBe(5000);
           });
         });
       });
