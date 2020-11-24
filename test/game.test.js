@@ -1,4 +1,4 @@
-import { gameRun } from './game-mock';
+import gameRun from './game-mock';
 
 require('jest-canvas-mock');
 

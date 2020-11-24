@@ -1,10 +1,10 @@
 import Phaser from 'phaser';
-import { Player } from './Entities/Player';
-import { ChaserShip } from './Entities/ChaserShip';
-import { GunShip } from './Entities/GunShip';
-import { CarrierShip } from './Entities/CarrierShip';
+import Player from './Entities/Player';
+import ChaserShip from './Entities/ChaserShip';
+import GunShip from './Entities/GunShip';
+import CarrierShip from './Entities/CarrierShip';
 
-export class SceneMain extends Phaser.Scene {
+export default class SceneMain extends Phaser.Scene {
   constructor() {
     super({ key: 'SceneMain' });
   }

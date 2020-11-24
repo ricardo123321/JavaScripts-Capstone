@@ -1,10 +1,10 @@
 import Phaser from 'phaser';
-import { SceneMainMenu } from '../src/scenes/SceneMainMenu';
-import { SceneMain } from '../src/scenes/SceneMain';
-import { SceneGameOver } from '../src/scenes/SceneGameOver';
-import { LeaderBoard } from '../src/scenes/LeaderBoard';
+import SceneMainMenu from '../src/scenes/SceneMainMenu';
+import SceneMain from '../src/scenes/SceneMain';
+import SceneGameOver from '../src/scenes/SceneGameOver';
+import LeaderBoard from '../src/scenes/LeaderBoard';
 
-export const gameRun = () => {
+const gameRun = () => {
   const config = {
     type: Phaser.WEBGL,
     parent: 'divld',
@@ -34,3 +34,4 @@ export const gameRun = () => {
 
   return game;
 };
+export { gameRun as default };

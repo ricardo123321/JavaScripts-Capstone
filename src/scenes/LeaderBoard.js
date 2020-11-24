@@ -1,8 +1,8 @@
 import Phaser from 'phaser';
-import { ScrollingBackground } from './scrollingBackground';
+import ScrollingBackground from './scrollingBackground';
 import { getScoreBoard } from '../ScoreBoard';
 
-export class LeaderBoard extends Phaser.Scene {
+export default class LeaderBoard extends Phaser.Scene {
   constructor() {
     super({ key: 'LeaderBoard' });
   }

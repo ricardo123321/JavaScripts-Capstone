@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
-import { ScrollingBackground } from './scrollingBackground';
+import ScrollingBackground from './scrollingBackground';
 
-export class SceneMainMenu extends Phaser.Scene {
+export default class SceneMainMenu extends Phaser.Scene {
   constructor() {
     super({ key: 'SceneMainMenu' });
   }

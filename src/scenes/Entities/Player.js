@@ -1,9 +1,9 @@
 import Phaser from 'phaser';
-import { Entity } from './Entities';
-import { PlayerLaser } from './PlayerLaser';
+import Entity from './Entities';
+import PlayerLaser from './PlayerLaser';
 import { storeScores } from '../../LocalStr';
 
-export class Player extends Entity {
+export default class Player extends Entity {
   constructor(scene, x, y, key) {
     super(scene, x, y, key, 'Player');
     this.setData('speed', 200);

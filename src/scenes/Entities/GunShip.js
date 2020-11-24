@@ -1,8 +1,8 @@
 import Phaser from 'phaser';
-import { Entity } from './Entities';
-import { EnemyLaser } from './EnemyLaser';
+import Entity from './Entities';
+import EnemyLaser from './EnemyLaser';
 
-export class GunShip extends Entity {
+export default class GunShip extends Entity {
   constructor(scene, x, y) {
     super(scene, x, y, 'ufodark', 'GunShip');
     this.play('ufodark');

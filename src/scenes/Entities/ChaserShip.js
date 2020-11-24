@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
-import { Entity } from './Entities';
+import Entity from './Entities';
 
-export class ChaserShip extends Entity {
+export default class ChaserShip extends Entity {
   constructor(scene, x, y) {
     super(scene, x, y, 'ufo', 'ChaserShip');
     this.body.velocity.y = Phaser.Math.Between(50, 100);

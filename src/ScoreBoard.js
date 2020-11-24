@@ -48,7 +48,7 @@ const sorting = (obj) => {
   return Array.from(array).sort((a, b) => b[0] - a[0]);
 };
 
-const getScoreBoard = async function() {
+const getScoreBoard = async function () {
   const address = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/N9E2SATejbOkDiI58nb6Vu/scores/';
   const settings = {
     method: 'GET',
@@ -61,6 +61,6 @@ const getScoreBoard = async function() {
   const answer = await response.json();
 
   return sorting(answer.result);
-}
+};
 
 export { submitHighScore, getScoreBoard, createGame };

@@ -1,9 +1,9 @@
 import Phaser from 'phaser';
-import { ScrollingBackground } from './scrollingBackground';
+import ScrollingBackground from './scrollingBackground';
 import { getLocalScores } from '../LocalStr';
 import { submitHighScore } from '../ScoreBoard';
 
-export class SceneGameOver extends Phaser.Scene {
+export default class SceneGameOver extends Phaser.Scene {
   constructor() {
     super({ key: 'SceneGameOver' });
   }
