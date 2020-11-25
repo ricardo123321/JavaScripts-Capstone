@@ -74,7 +74,7 @@ export default class SceneMainMenu extends Phaser.Scene {
       this.sfx.btnDown.play();
     }, this);
 
-    this.btnRecord.on('pointerup',  () => {
+    this.btnRecord.on('pointerup', () => {
       this.btnRecord.setTexture('sprBtnRecord');
       this.scene.start('LeaderBoard');
     }, this);
