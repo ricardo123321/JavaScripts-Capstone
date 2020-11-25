@@ -39,21 +39,21 @@ export default class SceneGameOver extends Phaser.Scene {
 
     this.btnRestart.setInteractive();
 
-    this.btnRestart.on('pointerover', function () {
+    this.btnRestart.on('pointerover', () => {
       this.btnRestart.setTexture('sprBtnRestartHover');
       this.sfx.btnOver.play();
     }, this);
 
-    this.btnRestart.on('pointerout', function () {
+    this.btnRestart.on('pointerout', () => {
       this.setTexture('sprBtnRestart');
     });
 
-    this.btnRestart.on('pointerdown', function () {
+    this.btnRestart.on('pointerdown', () => {
       this.btnRestart.setTexture('sprBtnRestartDown');
       this.sfx.btnDown.play();
     }, this);
 
-    this.btnRestart.on('pointerup', function () {
+    this.btnRestart.on('pointerup', () => {
       this.btnRestart.setTexture('sprBtnRestart');
       this.scene.start('SceneMain');
     }, this);

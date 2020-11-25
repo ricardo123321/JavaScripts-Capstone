@@ -33,21 +33,21 @@ export default class SceneMainMenu extends Phaser.Scene {
 
     this.btnPlay.setInteractive();
 
-    this.btnPlay.on('pointerover', function () {
+    this.btnPlay.on('pointerover', () => {
       this.btnPlay.setTexture('sprBtnPlayHover');
       this.sfx.btnOver.play();
     }, this);
 
-    this.btnPlay.on('pointerout', function () {
+    this.btnPlay.on('pointerout', () => {
       this.setTexture('sprBtnPlay');
     });
 
-    this.btnPlay.on('pointerdown', function () {
+    this.btnPlay.on('pointerdown', () => {
       this.btnPlay.setTexture('sprBtnPlayDown');
       this.sfx.btnDown.play();
     }, this);
 
-    this.btnPlay.on('pointerup', function () {
+    this.btnPlay.on('pointerup', () => {
       this.btnPlay.setTexture('sprBtnPlay');
       this.scene.start('SceneMain');
     }, this);
@@ -60,21 +60,21 @@ export default class SceneMainMenu extends Phaser.Scene {
 
     this.btnRecord.setInteractive();
 
-    this.btnRecord.on('pointerover', function () {
+    this.btnRecord.on('pointerover', () => {
       this.btnRecord.setTexture('sprBtnRecordHover');
       this.sfx.btnOver.play();
     }, this);
 
-    this.btnRecord.on('pointerout', function () {
+    this.btnRecord.on('pointerout', () => {
       this.setTexture('sprBtnRecord');
     });
 
-    this.btnRecord.on('pointerdown', function () {
+    this.btnRecord.on('pointerdown', () => {
       this.btnRecord.setTexture('sprBtnRecordDown');
       this.sfx.btnDown.play();
     }, this);
 
-    this.btnRecord.on('pointerup', function () {
+    this.btnRecord.on('pointerup',  () => {
       this.btnRecord.setTexture('sprBtnRecord');
       this.scene.start('LeaderBoard');
     }, this);
