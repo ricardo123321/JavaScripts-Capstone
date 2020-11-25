@@ -1,0 +1,57 @@
+{
+  "name": "phaser3-webpack-es6-dev-starter",
+  "version": "1.0.0",
+  "description": "A project starter for developing Phaser 3 games using Webpack and ES6.",
+  "scripts": {
+    "heroku-prebuild": "npm install --dev",
+    "test": "jest",
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "npx-fix": "npx eslint src/  --fix",
+    "start": "node server.js",
+    "heroku-postbuild": "webpack -p"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "setupFiles": [
+      "jest-canvas-mock"
+    ]
+  },
+  "repository": "https://www.github.com/snowbillr/phaser3-webpack-es6-dev-starter",
+  "author": "Ricardo",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/polyfill": "^7.12.1",
+    "babel-core": "6",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.0.0",
+    "babel-runtime": "^6.26.0",
+    "copy-webpack-plugin": "^4.5.1",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "jest": "^26.6.3",
+    "jest-canvas-mock": "^2.3.0",
+    "raw-loader": "^0.5.1",
+    "webpack": "^3.0.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-middleware": "^4.0.2",
+    "webpack-dev-server": "^2.11.5",
+    "webpack-hot-middleware": "^2.25.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@babel/runtime": "^7.12.5",
+    "babel-polyfill": "^6.26.0",
+    "express": "^4.17.1",
+    "phaser": "^3.0.0",
+    "regenerator-runtime": "^0.13.7"
+  }
+}
